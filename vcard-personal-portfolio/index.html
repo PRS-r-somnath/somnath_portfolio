@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <title>Somnath Portfolio</title>
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+ 
+</head>
+<body>
+  <!--
+
+    - #MAIN
+  -->  
+  <main>
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/person.jpg" alt="Somnath Gorai" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Somnath Gorai">Somnath Gorai</h1>
+          <p class="title" ">
+            <a href="https://drive.google.com/file/d/16jGaFkN-we9gXjvPzQoBymM4-VqIxc1f/view?usp=drive_link" >
+              <button class="cv" style="color: aliceblue; display: flex; gap: 10px;" onclick="handleDownload()" onmouseover="showTooltip()" onmouseout="hideTooltip()">
+                <div class="svg-wrapper">
+                  <i class="fas fa-download"></i>
+                </div>
+                <span id="download-text">Download CV</span>
+                <div id="loading-animation" style="display: none;">Loading...</div>
+              </button>
+            </a>
+          </p>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:sumitgorai2016@gmail.com" class="contact-link">sumitgorai2016@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:7708981161" class="contact-link">+91 7708981161</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="calendar-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Birthday</p>
+
+              <time datetime="2001-06-11">June 11, 2001</time>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Tiruppur, Tamilnadu</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/somnath-gorai-prs/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://github.com/PRS-r-somnath" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://wa.me/+917708981161" class="social-link">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link " data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Skills</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Certifications</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+          <li>
+            <button id="theme-toggle" class="theme-toggle">
+              <i id="theme-icon" class="fas fa-sun"></i>
+            </button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Welcome to my website! I graduated a year ago with a BE in Computer Science and Engineering.
+          </p>
+
+          <p>
+            My passion for the IT field has driven me to continually enhance my skills through various
+            projects and experiences. I believe these skills are crucial for success in our industry.
+            I'm excited to share my journey and showcase the work I've done so far.
+          </p>
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web design</h4>
+
+
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">React apps</h4>
+
+
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Photography</h4>
+
+
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - Intern Project
+        -->
+
+        <section class="testimonials">
+
+          <h3 class="h3 testimonials-title">Intern Projects</h3>
+
+          <ul class="testimonials-list has-scrollbar">
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/web.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Web pages</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Developed three essential webpages for Cube AI Solution, an AI and machine learning company: <br>
+                    <br>
+
+                    App Development Page: Showcases the company's expertise in developing cutting-edge AI-powered
+                    applications. <br> Includes detailed descriptions of development processes, technology stacks used,
+                    and case studies of successful projects. <br> <br>
+                    Cyber Security Page: Highlights Cube AI Solution's advanced cybersecurity services. <br> Features a
+                    comprehensive overview of security solutions, threat detection capabilities, and client success
+                    stories. <br><br>
+                    About Us Page: Provides an insightful look into the company's mission, values, and team. <br>
+                    Includes company history, leadership bios, and testimonials from satisfied clients. <br><br>
+                    Technologies Used: HTML5, CSS3, JavaScript, React
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/website.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Website Development Project</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    I worked on developing a user-friendly website that covers all the essential bases for effective
+                    communication: <br>
+                    <br>
+                    Home: This section grabs visitors' attention right away and guides them to explore more about the
+                    services offered.<br>
+                    About: It gives a clear picture of who we are, our mission, and introduces the team behind our
+                    work.<br>
+                    Product: Here, we showcase our offerings in detail, explaining how they can benefit potential
+                    clients.<br>
+                    Service: We highlight our specialized services and share success stories from happy clients.
+                    Contact: Making it easy for visitors to reach out to us with a simple contact form and our contact
+                    details.<br><br>
+                    Technologies Used: HTML5, CSS3, JavaScript
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+
+          <div class="overlay" data-overlay></div>
+
+          <section class="testimonials-modal">
+
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+
+            <div class="modal-content">
+
+              <h4 class="h3 modal-title" data-modal-title></h4>
+
+              <time datetime="#"> April 2024 - june 2024</time>
+
+              <div data-modal-text>
+                <p>
+
+                </p>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">NANDHA ENGINEERING COLLEGE <br>Erode.</h4>
+
+              <span>2019 — 2023</span>
+
+              <p class="timeline-text">
+                Bachelor of Engineering in COMPUTER SCIENCE AND ENGINEERING
+                <br>
+                CGPA: 8.9
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">KONGU MATRICULATION HIGHER SECONDARY SCHOOL <br>UTHUKULI. </h4>
+
+              <span>2018 — 2019</span>
+
+              <p class="timeline-text">
+                HSC
+                <br>
+                Percentage:73.5%
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">KONGU MATRICULATION HIGHER SECONDARY SCHOOL <br>UTHUKULI. </h4>
+
+              <span>2016 — 2017</span>
+
+              <p class="timeline-text">
+                SSLC
+                <br>
+                Percentage:85.5%
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Internship</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Frontend developer</h4>
+
+              <span>April 2024 — Present</span>
+
+              <p class="timeline-text">
+                ▪️ User Experience: Developed a webpage enhancing user experience through responsive design and
+                optimization techniques. <br> ▪️
+                Collaboration: Worked closely with design teams to implement dynamic, cross-browser compatible
+                interfaces. <br>▪️
+                Projects: Created three web pages for cubeaisolutions.com and developed a website for kblocks.com,
+                focusing on responsive design, performance optimization, and user-centric features.
+              </p>
+
+            </li>
+
+
+
+
+          </ol>
+
+        </section>
+
+        
+
+      </article>
+
+
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="skills" data-page="skills">
+        <div class="skills">
+          <div class="main-title">
+            <h2>My <span>Skills</span><span class="bg-text">My skills</span></h2>
+          </div>
+        </div>
+        <div class="about-stat">
+          <div class="dom">
+            <h4>Technical skills</h4>
+            <div class="progress-bars">
+              <div class="progress-bar">
+                <p class="prog-title"><i style="color: #c95d2e;" class='bx bxl-html5'></i> html5</p>
+                <div class="progress-con">
+                  <p class="prog-text">80%</p>
+                  <div class="progress">
+                    <span class="html"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <p class="prog-title"> <i style="color: #147bbc;" class='bx bxl-css3'></i> css3</p>
+                <div class="progress-con">
+                  <p class="prog-text">80%</p>
+                  <div class="progress">
+                    <span class="css"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <p class="prog-title"> <i style="color: #b0bc1e;" class='bx bxl-javascript'></i></i> javascript</p>
+                <div class="progress-con">
+                  <p class="prog-text">65%</p>
+                  <div class="progress">
+                    <span class="js"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <p class="prog-title"> <i style="color: #69bcbc;" class='bx bxl-java'></i> JAVA</p>
+                <div class="progress-con">
+                  <p class="prog-text">75%</p>
+                  <div class="progress">
+                    <span class="java"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <p class="prog-title"> <i style="color: #b0bc1e;" class='bx bxl-python'></i> python </p>
+                <div class="progress-con">
+                  <p class="prog-text">60%</p>
+                  <div class="progress">
+                    <span class="python"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-bar">
+                <p class="prog-title"> <i style="color: #1ebc7d;" class='bx bxl-microsoft'></i> microsoft office</p>
+                <div class="progress-con">
+                  <p class="prog-text">80%</p>
+                  <div class="progress">
+                    <span class="microsoft"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dom">
+            <h4>professional skills</h4>
+            <div class="professional">
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="85"></div>
+                <div class="text">
+                  <big>85%</big>
+                  <small>Adaptability</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="60"></div>
+                <div class="text">
+                  <big>60%</big>
+                  <small>Coding</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="90"></div>
+                <div class="text">
+                  <big>90%</big>
+                  <small>Team work</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="75"></div>
+                <div class="text">
+                  <big>75%</big>
+                  <small>Problem-solving</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="90"></div>
+                <div class="text">
+                  <big>90%</big>
+                  <small>Communication</small>
+                </div>
+              </div>
+              <div class="box">
+                <div class="circlez" data-dots="80" data-percent="65"></div>
+                <div class="text">
+                  <big>65%</big>
+                  <small>Creativity</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+
+        <section class="projects">
+
+      
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              
+
+            </button>
+          
+
+          </div>
+
+        </section>
+
+      </article>
+
+
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="certifications " data-page="certifications">
+
+       
+
+        <section class="blog-posts">
+
+        
+          <div class="blogs-content">
+            <div class="main-title">
+              <h2>My <span>Certifications</span><span class="bg-text">My Certifications</span></h2>
+            </div>
+            <div class="blogs">
+              <div class="blog">
+                <img src="certificate/ICTAcademy PRIoT04EN Certificate _ ICT Academy-page-00001.jpg" alt="">
+
+              </div>
+
+              <div class="blog">
+                <img src="certificate/19cs103 aws certificate-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/4250141_1680009254-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-0e346219-af44-4cc7-bb8f-90c3dca946ac.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-42b57f26-76cc-4aa0-8542-d19bb0e13d40.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-57d9b44b-55a7-443e-925f-03445816a283.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-6316cb11-e24a-475b-9910-bf95a844e6ee.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-7722bcc5-b4a4-4317-aa81-8f17d53bdfae.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-b33fae54-3590-443b-80a2-139a80bb92f7.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/UC-f3f3c5b7-ae3a-45ea-9e04-606741e8ddfe.jpg" alt="">
+
+              </div>
+
+
+              <div class="blog">
+                <img src="certificate/certificate 2.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate 3.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate 4.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate 5.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate 6.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate.png" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/CERTIFICATE 153-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/03119o7a-page-00001.jpg" alt="">
+
+              </div>
+
+              <div class="blog">
+                <img src="certificate/6883iocb-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/al43s0dz-page-00001.jpg" alt="">
+
+              </div>
+
+
+              <div class="blog">
+                <img src="certificate/gdk43gac-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/h3uliqza-page-00001.jpg" alt="">
+
+              </div>
+
+              <div class="blog">
+                <img src="certificate/igrjzqqz-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/ima9gpzd-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/ivzfk0be-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/jl4dm7xx-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/l25yu3vt-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/l6id3rng-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/ntc7yk0l-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/o3zfvc4f-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/ohmsobbq-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/pb6wijfo-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/r0m4s2we-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/rn1b4k3o-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/sxzmxbou-page-00001.jpg" alt="">
+
+              </div>
+
+              <div class="blog">
+                <img src="certificate/xunuf54m-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/y6lrqs0y-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/zwdsftfz-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/e-Certificate FDP (197)-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/certificate 2.png" alt="">
+
+              </div>
+
+              <div class="blog">
+                <img src="certificate/Certificate for Mr. for _Webinar on _Impact of COVID..._-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for Mr.P.Somnath Gorai for _Agri  Entrepreneurship Dron..._-page-00001.jpg"
+                  alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for Somnath gorai P for -- WORLD TIGER DAY - Cognize...--page-00001.jpg"
+                  alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for SOMNATH GORAI P for _NANDHA ENGINEERING COLLEGE ..._-page-00001.jpg"
+                  alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for SOMNATH GORAI.P for _Essential Lakshanas for Eff..._-page-00001.jpg"
+                  alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/Certificate for SOMNATH GORAI.P for _Feed Back Form _-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img src="certificate/Certificate for SOMNATH GORAI.P for _Interview Techniques_-page-00001.jpg" alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for Somnath gorai.p for _National Level Online Quiz ..._-page-00001.jpg"
+                  alt="">
+
+              </div>
+              <div class="blog">
+                <img
+                  src="certificate/Certificate for Somnath gorai.p for _Tiruppur Kumaran College Fo..._-page-00001.jpg"
+                  alt="">
+
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+      </article>
+
+
+
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d575.4618508178686!2d77.43165463806362!3d11.191327499363368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba90f1d252ee695%3A0xc03a200ff66b71ea!2sChengappalli%2C%20Tamil%20Nadu%20638812!5e0!3m2!1sen!2sin!4v1719593874484!5m2!1sen!2sin"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
